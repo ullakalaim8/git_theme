@@ -92,7 +92,8 @@ if( $checked = $transient->checked ) { // Did Wordpress check for updates?
             $transient->response[$theme_slug] = array(
                 'new_version' => $this->github_response['tag_name'],
              'package' => $new_files,
-                'url' => 'ttt'
+                'url' => 'ttt',
+		      'themes' =>'git_themes'
             );
 			}
 			}
