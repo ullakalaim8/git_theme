@@ -75,7 +75,7 @@ $this->basename = $file;
 	}
 
 	public function modify_transient( $transient ) {
-var_dump($transient);
+
 //var_dump(property_exists( $transient, 'checked') );
 
 		if( property_exists( $transient, 'checked') ) { // Check if transient has a checked property
@@ -83,13 +83,11 @@ var_dump($transient);
 			if( $checked = $transient->checked ) { // Did Wordpress check for updates?
 //var_dump($transient);
 				$this->get_repository_info(); // Get the repo info
-var_dump($this->github_response['tag_name']);
-var_dump($checked[ 'git_theme' ]);
+
 
 //exit();
 				$out_of_date = version_compare( $this->github_response['tag_name'], $checked[ $this->basename ], 'gt' ); // Check if we're out of date
-var_dump($out_of_date);
-var_dump($checked[ 'git_theme' ]);
+
 
 //exit();
 				if( $out_of_date ) {
